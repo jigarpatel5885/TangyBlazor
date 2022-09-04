@@ -1,0 +1,27 @@
+﻿<h3>Child Component</h3>
+
+<div class="alert alert-info">
+    @Title
+
+</div>
+
+<div class="alert alert-success">
+    @if(  childContent !=null)
+    {
+       <span> @childContent</span>
+    }
+
+</div>
+<button type="button" class="btn btn-danger" @onclick="Button_Click" > Button to be clicked</button>
+ 
+ <_GrandChildComponent ></_GrandChildComponent>
+@code {
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public RenderFragment childContent{ get; set; }
+
+    [Parameter]
+    public EventCallback Button_Click{ get; set; }
+}

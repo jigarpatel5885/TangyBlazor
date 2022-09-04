@@ -1,0 +1,21 @@
+﻿@page "/LearnBlazor/ParentComponent"
+<h3>Parent Component</h3>
+
+<CascadingValue Value="@messageForGrandChild" Name="cascading1">
+    <CascadingValue Value="@luckyNumber" Name="cascading2">
+        <_ChildComponent Title="This Message is passed from parent component" Button_Click="SetMessage">
+        <childContent>Render Fragement from parent    </childContent> 
+        </_ChildComponent>
+</CascadingValue>
+</CascadingValue>
+<p>@message</p>
+@code {
+    public string message { get; set; } = string.Empty;
+    public string messageForGrandChild { get; set; } = "this message is for grand child component from parent component";
+    public string luckyNumber { get; set; } = "hello this is lucky number";
+    private void SetMessage()
+    {
+        message = "button is clicked from child component";
+    }
+
+}
