@@ -9,6 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TangyWeb_Client", "TangyWeb
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tangy_Models", "Tangy_Models\Tangy_Models.csproj", "{A7051883-F1E4-41F5-9199-22328F9DF198}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tangy_Business", "Tangy_Business\Tangy_Business.csproj", "{E310FE90-70E6-4983-9B0E-3BA99AF91F6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tangy_Common", "Tangy_Common\Tangy_Common.csproj", "{219EE26E-186D-4C5F-8E2D-122609B57F78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tangy_DataAccess", "Tangy_DataAccess\Tangy_DataAccess.csproj", "{936DA873-0C08-4335-AA62-D69AEF650899}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +33,18 @@ Global
 		{A7051883-F1E4-41F5-9199-22328F9DF198}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7051883-F1E4-41F5-9199-22328F9DF198}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7051883-F1E4-41F5-9199-22328F9DF198}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E310FE90-70E6-4983-9B0E-3BA99AF91F6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E310FE90-70E6-4983-9B0E-3BA99AF91F6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E310FE90-70E6-4983-9B0E-3BA99AF91F6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E310FE90-70E6-4983-9B0E-3BA99AF91F6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{219EE26E-186D-4C5F-8E2D-122609B57F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{219EE26E-186D-4C5F-8E2D-122609B57F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{219EE26E-186D-4C5F-8E2D-122609B57F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{219EE26E-186D-4C5F-8E2D-122609B57F78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{936DA873-0C08-4335-AA62-D69AEF650899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{936DA873-0C08-4335-AA62-D69AEF650899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{936DA873-0C08-4335-AA62-D69AEF650899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{936DA873-0C08-4335-AA62-D69AEF650899}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
