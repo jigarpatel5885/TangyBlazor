@@ -42,21 +42,28 @@
     public int Id { get; set; }
     private CategoryDTO Category { get; set; } = new CategoryDTO();
     private string Title { get; set; } = "Create";
-    private bool IsLoading { get; set; } = true;
+    private bool IsLoading { get; set; } 
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (Id > 0)
+        if(firstRender)
         {
-            Title = "Update";
-            await Task.Run(LoadCategories);
+            if (Id > 0)
+            {
+                Title = "Update";
+                IsLoading = true;
+                await  LoadCategories();
+                StateHasChanged();
+            }
+            else
+            {         
+                IsLoading = false;
+                StateHasChanged();
+            }
         }
-        else
-        {         
-            IsLoading = false;
-        }
-
     }
+
+   
 
     private async Task LoadCategories()
     {
