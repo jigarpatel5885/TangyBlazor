@@ -18,12 +18,13 @@ namespace Tangy_Business.Repository
         private readonly IMapper _mapper; 
         public CategoryRepository(ApplicationDbContext dbContext,IMapper mapper)
         {
-            dbContext = _dbContext;
-            mapper = _mapper;
+            _dbContext= dbContext ;
+            _mapper = mapper ;
         }
         public async Task<CategoryDTO> Create(CategoryDTO objDTO)
         {
             var category =  _mapper.Map<CategoryDTO, Category>(objDTO);
+            category.CreatedDate = DateTime.Now;
             var addedObj =   _dbContext.Add(category);
             await _dbContext.SaveChangesAsync();
 
