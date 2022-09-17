@@ -24,8 +24,11 @@ namespace Tangy_DataAccess
         public string ImageUrl { get; set; }
 
         public int CategoryId { get; set; }
+
         [ForeignKey("CategoryId")]
         public Category Category { get; set; }
+
+        public ICollection<ProductPrices> ProductPrices { get; set; }
 
     }
 

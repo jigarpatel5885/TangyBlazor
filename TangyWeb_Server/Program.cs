@@ -1,15 +1,20 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;
+using Syncfusion.Blazor;
 using Tangy_Business.Repository;
 using Tangy_Business.Repository.IRepository;
 using Tangy_DataAccess;
 using Tangy_DataAccess.Data;
 using TangyWeb_Server.Data;
- 
+using TangyWeb_Server.Service;
+using TangyWeb_Server.Service.IService;
+
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NzE1MDMzQDMyMzAyZTMyMmUzMGJGTEtzUm1YVHQ0cUtCY2Fqek5HU1hYR3ZlN29CRXNFQWtPZjZFZjBZSDQ9");
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddSyncfusionBlazor();
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
@@ -19,6 +24,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IProductPriceRepository, ProductPriceRepository>();
+builder.Services.AddScoped<IFileUpload, FileUpload>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();

@@ -29,7 +29,7 @@
     [Parameter]
     public EventCallback<string> SelectedProduct { get; set; }
 
-    private async Task FavouriteUpdated(ChangeEventArgs e)
+    private async Task FavouriteUpdated(Microsoft.AspNetCore.Components.ChangeEventArgs e)
     {
         await OnFavouriteSelection.InvokeAsync((bool)e.Value);        
     }
