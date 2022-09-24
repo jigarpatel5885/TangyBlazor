@@ -9,7 +9,7 @@ namespace TangyWeb_Client.Services
     public class CartService : ICartService
     {
         private readonly ILocalStorageService _localStorage;
-
+        public event Action OnChange;
         public CartService(ILocalStorageService localStorage)
         {
             _localStorage = localStorage;
@@ -19,16 +19,20 @@ namespace TangyWeb_Client.Services
             var cart = await _localStorage.GetItemAsync<List<ShoppingCart>>(SD.ShoppingCart);
             for (int i = 0; i < cart.Count; i++)
             {
-                if(cart.Count == 1 || cart.Count==0)
+                if (cart[i].ProductId == cartToDecrement.ProductId && cart[i].ProductPriceId == cartToDecrement.ProductPriceId)
                 {
-                    cart.Remove(cart[i]);
-                }
-                else
-                {
-                    cart[i].Count -= cartToDecrement.Count;
+                    if (cart[i].Count == 1 || cartToDecrement.Count == 0  )
+                    {
+                        cart.Remove(cart[i]);
+                    }
+                    else
+                    {
+                        cart[i].Count -= cartToDecrement.Count;
+                    }
                 }
             }
             await _localStorage.SetItemAsync(SD.ShoppingCart, cart);
+            OnChange.Invoke();
         }
 
         public async Task IncrementCart(ShoppingCart cartToAdd)
@@ -59,6 +63,7 @@ namespace TangyWeb_Client.Services
             }
 
             await _localStorage.SetItemAsync(SD.ShoppingCart, cart);
+            OnChange.Invoke();
         }
     }
 }
