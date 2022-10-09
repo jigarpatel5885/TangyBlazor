@@ -1,9 +1,10 @@
 ﻿@page "/category"
 @using Tangy_Business.Repository.IRepository
 @using Tangy_Models
-@inject ICategoryRepository _categoryReposiory; 
-@inject IJSRuntime _jsRuntime;
-
+@inject ICategoryRepository _categoryReposiory
+@inject IJSRuntime _jsRuntime
+@using Tangy_Common
+@attribute [Authorize(Roles = SD.Role_Admin)]
 <div class="row mt-4">
 <div class="col-6">
         <h4 class="card-title text-primary">Category List</h4>

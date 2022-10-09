@@ -1,6 +1,6 @@
 ﻿@page "/category/create"
 @page "/category/edit/{id:int}"
-
+@attribute [Authorize]
 @using Tangy_Business.Repository.IRepository
 @using Tangy_Models
 @inject ICategoryRepository _categoryReposiory

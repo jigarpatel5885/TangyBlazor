@@ -9,7 +9,7 @@
 @inject ICategoryRepository _categoryRepository
 @inject IProductRepository _productRepository
 @inject NavigationManager _navigationManager
-
+@attribute [Authorize]
 <div class="row my-2">
     <h3 class="card-title text-primary mb-2 ml-3"> @Title Category</h3>
     <div class="col-10">
